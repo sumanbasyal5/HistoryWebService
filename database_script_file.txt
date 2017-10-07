@@ -1,0 +1,8 @@
+Create database History
+Create table HistoryPage(
+	historyId int identity(1,1) primary key,
+	[month] int  null,
+	[day] int  null,
+	[events] nvarchar(50) not null
+
+)
