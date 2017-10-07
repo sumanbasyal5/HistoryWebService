@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="events" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddToFileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFromFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFromFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFromFileResult" type="tns:ArrayOfHistoryPage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHistoryPage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HistoryPage" nillable="true" type="tns:HistoryPage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HistoryPage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="historyId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="month" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="day" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="events" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddToFileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddToFile" />
+  </wsdl:message>
+  <wsdl:message name="AddToFileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddToFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFromFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFromFile" />
+  </wsdl:message>
+  <wsdl:message name="GetFromFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFromFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HistoryWebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToFile">
+      <wsdl:input message="tns:AddToFileSoapIn" />
+      <wsdl:output message="tns:AddToFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFromFile">
+      <wsdl:input message="tns:GetFromFileSoapIn" />
+      <wsdl:output message="tns:GetFromFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HistoryWebServiceSoap" type="tns:HistoryWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToFile">
+      <soap:operation soapAction="http://tempuri.org/AddToFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFromFile">
+      <soap:operation soapAction="http://tempuri.org/GetFromFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HistoryWebServiceSoap12" type="tns:HistoryWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToFile">
+      <soap12:operation soapAction="http://tempuri.org/AddToFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFromFile">
+      <soap12:operation soapAction="http://tempuri.org/GetFromFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HistoryWebService">
+    <wsdl:port name="HistoryWebServiceSoap" binding="tns:HistoryWebServiceSoap">
+      <soap:address location="http://localhost:61453/HistoryWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HistoryWebServiceSoap12" binding="tns:HistoryWebServiceSoap12">
+      <soap12:address location="http://localhost:61453/HistoryWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

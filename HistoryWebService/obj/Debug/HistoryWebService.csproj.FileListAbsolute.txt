@@ -1,0 +1,10 @@
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\bin\HistoryWebService.dll.config
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\bin\HistoryWebService.dll
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\bin\HistoryWebService.pdb
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\obj\Debug\HistoryWebService.dll
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\obj\Debug\HistoryWebService.pdb
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\bin\EntityFramework.dll
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\bin\EntityFramework.SqlServer.dll
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\bin\EntityFramework.xml
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\bin\EntityFramework.SqlServer.xml
+C:\Users\basya\Documents\Visual Studio 2013\Projects\HistoryWebService\HistoryWebService\obj\Debug\HistoryWebService.csprojResolveAssemblyReference.cache

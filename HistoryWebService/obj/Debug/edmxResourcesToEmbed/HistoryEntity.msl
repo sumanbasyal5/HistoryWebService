@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HistoryModelStoreContainer" CdmEntityContainer="HistoryEntities">
+    <EntitySetMapping Name="HistoryPages">
+      <EntityTypeMapping TypeName="HistoryModel.HistoryPage">
+        <MappingFragment StoreEntitySet="HistoryPage">
+          <ScalarProperty Name="historyId" ColumnName="historyId" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="events" ColumnName="events" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
